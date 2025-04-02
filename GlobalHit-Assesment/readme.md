@@ -1,20 +1,13 @@
 # Globalhit Assessment
 
-Este projeto é um exemplo de aplicação ASP.NET Core configurada para ser executada em contêineres Docker junto com um banco de dados SQL Server.
+Este projeto é um exemplo de aplicação ASP.NET Core configurada com um banco de dados SQL Server.
 
 ## Pré-requisitos
 
-Antes de iniciar, certifique-se de ter o seguinte software instalado em seu ambiente de desenvolvimento:
+Executo os comandos SQL para criação das tabelas necessárias para o sistema.
 
-- [Docker](https://www.docker.com/products/docker-desktop)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+## Login na aplicação
 
-## Configuração
+Este projeto está configurado para executar com permissionamento Bearer Token , utilizando o Swagger primeiro crie uma nova conta que será vinculado ao login.
 
-### 1. Clonar o repositório
-
-Clone este repositório em seu ambiente de desenvolvimento local:
-
-```bash
-git clone https://github.com/rodrigokoto/providerit-assessment.git
-cd providerit-assessment
+Ao Realizar um novo Login um Bearer será criado , copie o código sem as aspas e cole no campo Authorize para executar a criação de uma nova proposta.
