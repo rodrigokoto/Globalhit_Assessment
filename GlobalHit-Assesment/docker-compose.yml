@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    image: providerit-assessment:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Data Source=db;Initial Catalog=ProviderIT;User=sa;Password=Your_password123;Connect Timeout=30;MultipleActiveResultSets=True;TrustServerCertificate=True
+      - Jwt__Key=providerITAssesment
+      - Jwt__Issuer=ProviderIT
+      - Jwt__Audience=ProviderIT
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "ProviderTeste"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+volumes:
+  sqlserverdata:
